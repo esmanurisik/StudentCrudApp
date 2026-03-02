@@ -1,0 +1,22 @@
+﻿@model StudentCrudApp.Models.Student
+@{
+    ViewData["Title"] = "Öğrenci Sil";
+}
+<h1 class="text-danger">Silme İşlemi</h1>
+<h3>Bu öğrenciyi silmek istediğinize emin misiniz?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Adı Soyadı</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.FullName)</dd>
+        <dt class="col-sm-3">Sınıfı</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Class)</dd>
+        <dt class="col-sm-3">Numarası</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Number)</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger me-2" />
+        <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+    </form>
+</div>

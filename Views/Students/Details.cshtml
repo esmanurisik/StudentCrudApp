@@ -1,0 +1,20 @@
+﻿@model StudentCrudApp.Models.Student
+@{
+    ViewData["Title"] = "Öğrenci Detayı";
+}
+<h1>Öğrenci Detayı</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Adı Soyadı</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.FullName)</dd>
+        <dt class="col-sm-3">Sınıfı</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Class)</dd>
+        <dt class="col-sm-3">Numarası</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Number)</dd>
+    </dl>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary me-2">Düzenle</a>
+        <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+    </div>
+</div>
